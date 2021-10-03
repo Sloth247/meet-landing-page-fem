@@ -1,0 +1,87 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.header {
+  display: grid;
+  padding-top: 3rem;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  place-content: center;
+  overflow: hidden;
+  @include mixins.mq(large) {
+    padding-top: 5rem;
+  }
+
+  &__logo {
+    @include mixins.mq(large) {
+      margin-bottom: 3.8rem;
+    }
+  }
+
+  &__container {
+    @include mixins.mq(large) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      width: 105%;
+      gap: 1rem;
+    }
+  }
+
+  &__inner {
+    padding: 0 6.4%;
+    @include mixins.mq(medium) {
+      padding: 0 20%;
+    }
+    @include mixins.mq(large) {
+      padding: 0;
+    }
+  }
+
+  &__hero-mobile {
+    width: 110%;
+    margin-top: 3.5rem;
+    @include mixins.mq(large) {
+      display: none;
+    }
+  }
+
+  &__hero-desktop-left {
+    display: none;
+    @include mixins.mq(large) {
+      display: block;
+    }
+  }
+  &__hero-desktop-right {
+    display: none;
+    @include mixins.mq(large) {
+      display: block;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+  &__title {
+    margin-top: 2.5rem;
+    color: variables.$color-black;
+    @include mixins.mq(medium) {
+      padding: 0 15%;
+      font-size: 3rem;
+    }
+    @include mixins.mq(large) {
+      margin-top: 3.375rem;
+      font-size: 4rem;
+      padding: 0 5%;
+    }
+  }
+
+  &__description {
+    padding: 1.5rem 0;
+    @include mixins.mq(large) {
+      font-size: 1.125rem;
+      padding: 2rem 0;
+      width: 110%;
+      text-align: center;
+    }
+  }
+}

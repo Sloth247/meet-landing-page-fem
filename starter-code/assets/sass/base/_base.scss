@@ -1,0 +1,42 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+*:focus {
+  outline: dotted 3px #606c38;
+  outline-offset: 10px;
+}
+
+body {
+  font-family: variables.$font-primary;
+  font-weight: variables.$font-weight-medium;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  color: variables.$color-gray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}

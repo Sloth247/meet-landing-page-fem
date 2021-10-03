@@ -1,0 +1,36 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 1px solid variables.$color-gray;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  position: relative;
+  color: variables.$color-gray;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -84px;
+    left: 50%;
+    width: 1px;
+    height: 84px;
+    background-color: variables.$color-gray;
+  }
+  &one {
+    margin-top: 9.25rem;
+    @include mixins.mq(large) {
+      margin-top: 12.12rem;
+    }
+  }
+  &two {
+    transform: translateY(-50%);
+    background-color: variables.$color-white;
+
+    z-index: 10;
+  }
+}

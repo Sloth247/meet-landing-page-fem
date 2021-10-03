@@ -1,0 +1,75 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.footer {
+  background-image: url("../../mobile/image-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  text-align: center;
+  color: variables.$color-white;
+  padding-bottom: 4.5rem;
+  margin-top: 7rem;
+  position: relative;
+  @include mixins.mq(medium) {
+    background-image: url("../../tablet/image-footer.jpg");
+  }
+  @include mixins.mq(large) {
+    background-image: url("../../desktop/image-footer.jpg");
+    padding-bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    background-color: #4d96a9;
+    position: absolute;
+    mix-blend-mode: multiply;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__inner {
+    padding: 0 6.4%;
+    @include mixins.mq(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr max-content;
+      grid-template-rows: 1fr;
+      justify-content: center;
+      text-align: left;
+      gap: 5.75rem;
+      padding: 5% 11.5%;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+    @include mixins.mq(medium) {
+      font-size: 2.5rem;
+      padding: 0 20%;
+    }
+    @include mixins.mq(large) {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__description {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    @include mixins.mq(medium) {
+      padding: 0 12.6%;
+    }
+    @include mixins.mq(large) {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+}
